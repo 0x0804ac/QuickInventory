@@ -3,6 +3,7 @@ version: "1.4"
 main: com.nokhoon.quickinventory.PluginMain
 description: quick access to crafting table and ender chest
 api-version: 1.16
+author: "0x0804ac"
 
 commands: 
   ct:
