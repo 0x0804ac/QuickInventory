@@ -16,7 +16,8 @@ public class PluginMain extends JavaPlugin {
 		case "ct":
 			if(sender instanceof Player) {
 				Player player = (Player) sender;
-				if(player.openWorkbench(null, true) == null) audience.sendMessage(PluginConstants.error("제작 메뉴를 열지 못했습니다."));
+				if(player.openWorkbench(null, true) == null)
+					audience.sendMessage(PluginConstants.error("제작 메뉴를 열지 못했습니다."));
 			}
 			else audience.sendMessage(PluginConstants.PLAYER_COMMAND);
 			return true;
@@ -24,7 +25,8 @@ public class PluginMain extends JavaPlugin {
 			if(sender instanceof Player) {
 				Player player = (Player) sender;
 				player.playSound(player.getLocation(), Sound.BLOCK_ENDER_CHEST_OPEN, 1.0F, 1.0F);
-				if(player.openInventory(player.getEnderChest()) == null) audience.sendMessage(PluginConstants.error("엔더 상자를 열지 못했습니다."));
+				if(player.openInventory(player.getEnderChest()) == null)
+					audience.sendMessage(PluginConstants.error("엔더 상자를 열지 못했습니다."));
 			}
 			else audience.sendMessage(PluginConstants.PLAYER_COMMAND);
 			return true;
