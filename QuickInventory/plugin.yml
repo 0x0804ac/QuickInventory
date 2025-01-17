@@ -1,13 +1,13 @@
 name: QuickInventory
-version: "1.10"
+version: "1.11"
 main: com.nokhoon.quickinventory.PluginMain
 description: Open crafting table and ender chest
-api-version: "1.20"
+api-version: "1.21"
 author: "0x0804ac"
 commands: 
   ct:
-    description: opens crafting table inventory
+    description: Player opens a crafting table inventory
     usage: /ct
   ec:
-    description: opens ender chest inventory
+    description: Player opens their ender chest inventory
     usage: /ec
