@@ -7,11 +7,18 @@ import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.InventoryView;
+import org.bukkit.inventory.MenuType;
+import org.bukkit.inventory.view.builder.LocationInventoryViewBuilder;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import net.kyori.adventure.audience.Audience;
+import net.kyori.adventure.text.Component;
 
 public class PluginMain extends JavaPlugin {
+	private static LocationInventoryViewBuilder<InventoryView> CRAFTING_VIEW = MenuType.CRAFTING.builder()
+			.title(Component.text("제작대 열기 /ct")).checkReachable(false);
+	
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		Audience audience = (Audience) sender;
@@ -19,8 +26,8 @@ public class PluginMain extends JavaPlugin {
 		case "ct" -> {
 			if(sender instanceof Player) {
 				Player player = (Player) sender;
-				if(player.openWorkbench(null, true) == null)
-					audience.sendMessage(PluginConstants.error("제작 메뉴를 열지 못했습니다."));
+				//if(player.openWorkbench(null, true) == null) audience.sendMessage(PluginConstants.error("제작 메뉴를 열지 못했습니다."));
+				player.openInventory(CRAFTING_VIEW.location(player.getLocation()).build(player));
 			}
 			else audience.sendMessage(PluginConstants.PLAYER_COMMAND);
 		}
